@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NotiTrivia — Trivia on your wrist.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #000000;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+
+      /* Stack everything vertically, centered, filling the full viewport */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 24px 24px;
+    }
+
+    /* ─── GRADIENT ─── */
+    :root {
+      --grad: linear-gradient(to right, #FF8500, #FF2D87, #8B3FBF);
+    }
+
+    /* ─── HERO IMAGE ─── */
+    .hero img {
+      width: min(500px, 58vw, 50vh);
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ─── HEADLINE ─── */
+    .headline {
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 3vh;
+      margin-bottom: 1.5vh;
+    }
+
+    /* ─── SUBHEADLINE ─── */
+    .subheadline {
+      font-size: clamp(13px, 1.7vw, 18px);
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 0.005em;
+      line-height: 1.5;
+      margin-bottom: 3vh;
+    }
+
+    /* ─── APP STORE BUTTON ─── */
+    .btn-wrap {
+      display: inline-block;
+      padding: 2px;
+      border-radius: 13px;
+      background: var(--grad);
+      text-decoration: none;
+    }
+
+    .btn-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #000000;
+      border-radius: 11px;
+      padding: 8px 18px;
+    }
+
+    .apple-logo {
+      width: 22px;
+      height: 27px;
+      flex-shrink: 0;
+    }
+
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .btn-text-top {
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-text-bottom {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── RESPONSIVE (tall-narrow mobile) ─── */
+    @media (max-width: 480px) {
+      body {
+        overflow: auto;
+        justify-content: flex-start;
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+
+      .hero img {
+        width: min(280px, 80vw);
+      }
+
+      .headline {
+        font-size: clamp(36px, 10vw, 52px);
+        margin-top: 28px;
+        margin-bottom: 16px;
+      }
+
+      .subheadline {
+        font-size: 15px;
+        margin-bottom: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HERO IMAGE ─── -->
+  <section class="hero">
+    <img src="Images/watchImage.png" alt="Apple Watch showing NotiTrivia" />
+  </section>
+
+  <!-- ─── HEADLINE ─── -->
+  <h1 class="headline">Trivia on your wrist.</h1>
+
+  <!-- ─── SUBHEADLINE ─── -->
+  <p class="subheadline">Answer directly from the notification. No app required.</p>
+
+  <!-- ─── APP STORE BUTTON ─── -->
+  <a href="#" class="btn-wrap" aria-label="Download on the App Store">
+    <div class="btn-inner">
+
+        <svg class="apple-logo" viewBox="0 -80 814 1080" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="appleGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%"   stop-color="#FF8500" />
+            <stop offset="50%"  stop-color="#FF2D87" />
+            <stop offset="100%" stop-color="#8B3FBF" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#appleGrad)" d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-127.5c-58.8-99.6-107.5-264.3-107.5-420.6 0-189.5 130.1-301.8 261.5-301.8 71.6 0 130.9 46.9 176.3 46.9 43.6 0 111.6-49.4 192.4-49.4 31 0 108.2 2.6 177.3 80.4zm-208.8-252c33.8-40.6 57.3-97.3 57.3-154 0-7.8-.6-15.6-1.9-22.1-54.5 2-118.8 36.2-157.7 82.2-32.5 37.5-61 95.1-61 152.4 0 8.5 1.3 17 1.9 19.6 3.2.6 8.5 1.3 13.8 1.3 49.1 0 110.7-32.9 147.6-79.4z"/>
+      </svg>
+
+      <div class="btn-text">
+        <span class="btn-text-top">Download on the</span>
+        <span class="btn-text-bottom">App Store</span>
+      </div>
+
+    </div>
+  </a>
+
+</body>
+</html>
